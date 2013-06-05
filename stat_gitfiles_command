@@ -1,0 +1,3 @@
+
+stat -t "%s" -f "{\"%N\":%Sm}, " `git ls-tree -r --name-only master` > `git rev-parse --show-toplevel`/fileaccesstimes.json
+echo "[ `cat \`git rev-parse --show-toplevel\`/fileaccesstimes.json` {\"::systime::\":`date +"%s"`}]" >`git rev-parse --show-toplevel`/fileaccesstimes.json

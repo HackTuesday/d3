@@ -1,0 +1,3 @@
+
+stat -t "%s" -f "\"%N\":%Sm , " `git ls-tree -r --name-only master` > data/fileaccesstimes.json
+echo "{ `cat data/fileaccesstimes.json` \"systime\":`date +"%s"` }" >data/fileaccesstimes.json
